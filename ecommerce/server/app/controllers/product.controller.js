@@ -13,3 +13,33 @@ exports.findAll = (req, res) => {
         })
     })
 }
+exports.create = (req, res) => {
+    // console.log(req.body)
+    if(!req.body.name){
+        res.status(400).send({
+            message: 'The name is mandatory'
+        })
+        return;
+    }
+    Product.create(req.body)
+    .then(data => {
+        res.send(data)
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: 'Could not insert the data'
+        })
+    })
+}
+
+// exports.findOne = (req, res) => {
+
+// }
+
+// exports.udpate = (req, res) => {
+
+// }
+
+// exports.delete = (req, res) => {
+
+// }
