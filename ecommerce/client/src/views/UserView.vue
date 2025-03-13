@@ -1,4 +1,7 @@
 <template>
+    <div v-if="!user">
+      {{ this.$router.push({ name: 'login' })}}
+    </div>
     <div class="min-h-screen flex items-center justify-center border-t border-gray-100">
       <div class="border mt-2 p-6 rounded-md w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
         <div v-if="message" class="bg-red-500 mb-2 text-white p-2 rounded">{{ message }}</div>

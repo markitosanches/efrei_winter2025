@@ -4,7 +4,7 @@ class UserDataService {
     return http.post('/user', data)
   }
 
-  login (data) {
+  postLogin (data) {
     return http.post('/user/login', data)
   }
 
